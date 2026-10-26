@@ -61,7 +61,9 @@ def _entries_for_person(hass: HomeAssistant, person_id: str) -> list:
         ent = ent_reg.async_get(tracker)
         dev = dev_reg.async_get(ent.device_id) if ent and ent.device_id else None
         if dev:
-            found += [e for e in entries if e.entry_id == dev.config_entry_id and e not in found]
+            # Ab HA 2026.10 gehört ein Gerät genau einem Eintrag (config_entry_id), davor config_entries
+            ids = {dev.config_entry_id} if hasattr(dev, "config_entry_id") else dev.config_entries
+            found += [e for e in entries if e.entry_id in ids and e not in found]
     return found
 
 
