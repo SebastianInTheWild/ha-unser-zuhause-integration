@@ -1,0 +1,42 @@
+notify:
+  fields:
+    message:
+      required: true
+      example: "Die Waschmaschine ist fertig."
+      selector:
+        text:
+          multiline: true
+    title:
+      example: "Waschküche"
+      selector:
+        text:
+    persons:
+      selector:
+        entity:
+          domain: person
+          multiple: true
+    data:
+      advanced: true
+      example: '{"push": {"interruption-level": "time-sensitive"}}'
+      selector:
+        object:
+
+set_report:
+  fields:
+    report:
+      required: true
+      selector:
+        select:
+          options:
+            - energy_coach
+          translation_key: report
+    title:
+      required: true
+      example: "⚡ Energie-Woche: 64 % selbst versorgt"
+      selector:
+        text:
+    message:
+      required: true
+      selector:
+        text:
+          multiline: true

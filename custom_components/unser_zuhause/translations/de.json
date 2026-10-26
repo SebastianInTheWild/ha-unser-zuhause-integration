@@ -1,0 +1,149 @@
+{
+  "config": {
+    "abort": {
+      "single_instance_allowed": "Unser Zuhause ist bereits eingerichtet."
+    },
+    "step": {
+      "user": {
+        "title": "Unser Zuhause",
+        "description": "Legt Sammelsensoren für das Dashboard „Unser Zuhause“ an: eingeschaltete Lichter, offene Rollos, offene Fenster & Türen und Personen zu Hause.",
+        "data": {
+          "exclude_label": "Ausschluss-Label",
+          "exclude_entities": "Diese Entitäten nicht mitzählen",
+          "cover_classes": "Diese Rollo-Arten zählen",
+          "opening_classes": "Diese Fenster-/Tür-Arten zählen"
+        },
+        "data_description": {
+          "exclude_label": "Entitäten oder Geräte mit diesem Label zählen nicht mit (wie im Dashboard).",
+          "exclude_entities": "Einzelne Lichter, Rollos, Kontakte oder Personen ausschließen.",
+          "cover_classes": "Geräteklassen der Rollos, die als „offen“ gezählt werden.",
+          "opening_classes": "Geräteklassen der Kontakte, die als Fenster oder Tür zählen."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Unser Zuhause",
+        "data": {
+          "exclude_label": "Ausschluss-Label",
+          "exclude_entities": "Diese Entitäten nicht mitzählen",
+          "cover_classes": "Diese Rollo-Arten zählen",
+          "opening_classes": "Diese Fenster-/Tür-Arten zählen"
+        },
+        "data_description": {
+          "exclude_label": "Entitäten oder Geräte mit diesem Label zählen nicht mit (wie im Dashboard).",
+          "exclude_entities": "Einzelne Lichter, Rollos, Kontakte oder Personen ausschließen.",
+          "cover_classes": "Geräteklassen der Rollos, die als „offen“ gezählt werden.",
+          "opening_classes": "Geräteklassen der Kontakte, die als Fenster oder Tür zählen."
+        }
+      }
+    }
+  },
+  "selector": {
+    "cover_classes": {
+      "options": {
+        "shutter": "Rollladen",
+        "blind": "Jalousie",
+        "shade": "Rollo",
+        "curtain": "Vorhang",
+        "awning": "Markise",
+        "window": "Fenster",
+        "garage": "Garagentor",
+        "gate": "Tor",
+        "door": "Tür",
+        "damper": "Klappe",
+        "other": "Ohne Geräteklasse"
+      }
+    },
+    "opening_classes": {
+      "options": {
+        "window": "Fenster",
+        "door": "Tür",
+        "garage_door": "Garagentor",
+        "opening": "Öffnung"
+      }
+    },
+    "report": {
+      "options": {
+        "energy_coach": "Energie-Coach"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "lights_on": {
+        "name": "Lichter an"
+      },
+      "covers_open": {
+        "name": "Offene Rollos"
+      },
+      "openings_count": {
+        "name": "Offene Fenster & Türen"
+      },
+      "persons_home": {
+        "name": "Personen zu Hause"
+      },
+      "energy_coach": {
+        "name": "Energie-Coach"
+      }
+    },
+    "binary_sensor": {
+      "openings_open": {
+        "name": "Fenster & Türen"
+      }
+    },
+    "select": {
+      "house_mode": {
+        "name": "Hausmodus",
+        "state": {
+          "anwesend": "Anwesend",
+          "abwesend": "Abwesend"
+        }
+      }
+    }
+  },
+  "services": {
+    "notify": {
+      "name": "Benachrichtigen",
+      "description": "Schickt eine Push-Nachricht an Personen. Ihre Handys werden automatisch über den in der Companion-App angemeldeten Benutzer gefunden.",
+      "fields": {
+        "message": {
+          "name": "Nachricht",
+          "description": "Text der Benachrichtigung."
+        },
+        "title": {
+          "name": "Titel",
+          "description": "Optionaler Titel."
+        },
+        "persons": {
+          "name": "Personen",
+          "description": "Wer die Nachricht bekommt. Leer = alle mit App."
+        },
+        "data": {
+          "name": "Zusatzdaten",
+          "description": "Weitere Optionen für die Companion-App, z. B. Ton, Priorität oder Aktionen."
+        }
+      }
+    },
+    "set_report": {
+      "name": "Bericht speichern",
+      "description": "Speichert den letzten Bericht eines Agenten (z. B. Energie-Coach) in seinem Sensor, damit Dashboards ihn anzeigen.",
+      "fields": {
+        "report": {
+          "name": "Bericht",
+          "description": "Welcher Bericht."
+        },
+        "title": {
+          "name": "Titel",
+          "description": "Überschrift des Berichts."
+        },
+        "message": {
+          "name": "Text",
+          "description": "Text des Berichts (Markdown)."
+        }
+      }
+    }
+  }
+}

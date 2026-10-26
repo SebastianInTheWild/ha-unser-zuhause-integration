@@ -1,0 +1,149 @@
+{
+  "config": {
+    "abort": {
+      "single_instance_allowed": "Unser Zuhause is already set up."
+    },
+    "step": {
+      "user": {
+        "title": "Unser Zuhause",
+        "description": "Creates summary sensors for the „Unser Zuhause“ dashboard: lights on, open covers, open windows & doors and people at home.",
+        "data": {
+          "exclude_label": "Exclusion label",
+          "exclude_entities": "Do not count these entities",
+          "cover_classes": "Count these cover types",
+          "opening_classes": "Count these window/door types"
+        },
+        "data_description": {
+          "exclude_label": "Entities or devices with this label are not counted (same as in the dashboard).",
+          "exclude_entities": "Exclude single lights, covers, contacts or persons.",
+          "cover_classes": "Cover device classes counted as open.",
+          "opening_classes": "Contact device classes counted as window or door."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Unser Zuhause",
+        "data": {
+          "exclude_label": "Exclusion label",
+          "exclude_entities": "Do not count these entities",
+          "cover_classes": "Count these cover types",
+          "opening_classes": "Count these window/door types"
+        },
+        "data_description": {
+          "exclude_label": "Entities or devices with this label are not counted (same as in the dashboard).",
+          "exclude_entities": "Exclude single lights, covers, contacts or persons.",
+          "cover_classes": "Cover device classes counted as open.",
+          "opening_classes": "Contact device classes counted as window or door."
+        }
+      }
+    }
+  },
+  "selector": {
+    "cover_classes": {
+      "options": {
+        "shutter": "Shutter",
+        "blind": "Blind",
+        "shade": "Shade",
+        "curtain": "Curtain",
+        "awning": "Awning",
+        "window": "Window",
+        "garage": "Garage door",
+        "gate": "Gate",
+        "door": "Door",
+        "damper": "Damper",
+        "other": "No device class"
+      }
+    },
+    "opening_classes": {
+      "options": {
+        "window": "Window",
+        "door": "Door",
+        "garage_door": "Garage door",
+        "opening": "Opening"
+      }
+    },
+    "report": {
+      "options": {
+        "energy_coach": "Energy coach"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "lights_on": {
+        "name": "Lights on"
+      },
+      "covers_open": {
+        "name": "Open covers"
+      },
+      "openings_count": {
+        "name": "Open windows & doors"
+      },
+      "persons_home": {
+        "name": "People at home"
+      },
+      "energy_coach": {
+        "name": "Energy coach"
+      }
+    },
+    "binary_sensor": {
+      "openings_open": {
+        "name": "Windows & doors"
+      }
+    },
+    "select": {
+      "house_mode": {
+        "name": "House mode",
+        "state": {
+          "anwesend": "Home",
+          "abwesend": "Away"
+        }
+      }
+    }
+  },
+  "services": {
+    "notify": {
+      "name": "Notify",
+      "description": "Sends a push notification to people. Their phones are found automatically via the user signed in to the Companion app.",
+      "fields": {
+        "message": {
+          "name": "Message",
+          "description": "Text of the notification."
+        },
+        "title": {
+          "name": "Title",
+          "description": "Optional title."
+        },
+        "persons": {
+          "name": "People",
+          "description": "Who gets the notification. Empty = everyone with the app."
+        },
+        "data": {
+          "name": "Additional data",
+          "description": "Extra options for the Companion app, e.g. sound, priority or actions."
+        }
+      }
+    },
+    "set_report": {
+      "name": "Set report",
+      "description": "Stores the latest report of an agent (e.g. the energy coach) in its sensor so dashboards can show it.",
+      "fields": {
+        "report": {
+          "name": "Report",
+          "description": "Which report."
+        },
+        "title": {
+          "name": "Title",
+          "description": "Headline of the report."
+        },
+        "message": {
+          "name": "Text",
+          "description": "Report text (Markdown)."
+        }
+      }
+    }
+  }
+}

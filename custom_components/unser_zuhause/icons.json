@@ -1,0 +1,58 @@
+{
+  "entity": {
+    "sensor": {
+      "lights_on": {
+        "default": "mdi:lightbulb-on-outline",
+        "state": {
+          "0": "mdi:lightbulb-outline"
+        }
+      },
+      "covers_open": {
+        "default": "mdi:window-shutter-open",
+        "state": {
+          "0": "mdi:window-shutter"
+        }
+      },
+      "openings_count": {
+        "default": "mdi:window-open-variant",
+        "state": {
+          "0": "mdi:window-closed-variant"
+        }
+      },
+      "persons_home": {
+        "default": "mdi:home-account",
+        "state": {
+          "0": "mdi:home-outline"
+        }
+      },
+      "energy_coach": {
+        "default": "mdi:lightning-bolt-circle"
+      }
+    },
+    "binary_sensor": {
+      "openings_open": {
+        "default": "mdi:window-open-variant",
+        "state": {
+          "off": "mdi:window-closed-variant"
+        }
+      }
+    },
+    "select": {
+      "house_mode": {
+        "default": "mdi:home-account",
+        "state": {
+          "anwesend": "mdi:home-account",
+          "abwesend": "mdi:home-export-outline"
+        }
+      }
+    }
+  },
+  "services": {
+    "notify": {
+      "service": "mdi:bell-ring-outline"
+    },
+    "set_report": {
+      "service": "mdi:file-document-edit-outline"
+    }
+  }
+}
